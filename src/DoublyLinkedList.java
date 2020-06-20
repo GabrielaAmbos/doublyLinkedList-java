@@ -243,4 +243,26 @@ public class DoublyLinkedList<E> implements List<E> {
 		}
 		return s;
 	}
+	
+	/**
+	 * 1. Crie na classe de lista duplamente encadeada (DoublyLinkedList) um método que inverte duas
+	 * posições na lista duplamente encadeada. Utilize a assinatura: 
+	 */
+	public void swap(int pos1, int pos2) {
+		if ((pos1 < 0  ||  pos1 > numElements) || (pos2 < 0  ||  pos2 > numElements)) {
+			throw new IndexOutOfBoundsException();
+		} else {
+			E aux1 = get(pos1);
+			E aux2 = get(pos2);
+			remove(pos1);
+			insert(aux2, pos1);
+			remove(pos2);
+			insert(aux1, pos2);
+		}
+	}
 }
+
+
+
+
+
